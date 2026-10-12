@@ -23,24 +23,26 @@ const body = Outfit({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} | Luxury Custom Home Interiors`,
-    template: `%s | ${siteConfig.name}`,
+    default: "AustinClosets Custom Interiors",
+    template: `%s | AustinClosets`,
   },
   description: siteConfig.description,
   icons: {
-    icon: "/favicon.svg",
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: `${siteConfig.name} | Luxury Custom Home Interiors`,
+    title: "AustinClosets Custom Interiors",
     description: siteConfig.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} | Luxury Custom Home Interiors`,
+    title: "AustinClosets Custom Interiors",
     description: siteConfig.description,
   },
   robots: {

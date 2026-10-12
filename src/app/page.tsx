@@ -13,12 +13,14 @@ import { WhyChooseUs } from "@/components/home/WhyChooseUs";
 import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "Luxury Custom Home Interiors",
+  title: {
+    absolute: "AustinClosets Custom Interiors",
+  },
   description:
     "AustinClosets designs Closets Main, custom cabinets, bedrooms, living rooms, home offices, and complete residential interiors across the United States.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: `${siteConfig.name} | Spaces Designed Around You`,
+    title: "AustinClosets Custom Interiors",
     description: siteConfig.description,
     url: "/",
   },
