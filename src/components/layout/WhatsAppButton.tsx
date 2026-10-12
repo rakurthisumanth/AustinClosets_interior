@@ -1,10 +1,17 @@
 "use client";
 
 import { useMemo } from "react";
+import { siteConfig } from "@/data/site";
+
+function getWhatsAppNumber(): string {
+  const fromEnv = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/\D/g, "");
+  if (fromEnv) return fromEnv;
+  return siteConfig.contact.whatsappNumber.replace(/\D/g, "");
+}
 
 export function WhatsAppButton() {
   const href = useMemo(() => {
-    const number = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/\D/g, "");
+    const number = getWhatsAppNumber();
     if (!number) return null;
     return `https://wa.me/${number}`;
   }, []);

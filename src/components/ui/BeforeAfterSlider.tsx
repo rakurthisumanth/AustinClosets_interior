@@ -52,7 +52,7 @@ export function BeforeAfterSlider({
     <div
       ref={containerRef}
       className={cn(
-        "relative aspect-[16/11] w-full select-none overflow-hidden bg-ivory-deep touch-none",
+        "relative aspect-[16/10] w-full max-h-[34rem] select-none overflow-hidden bg-ivory-deep touch-none md:aspect-[16/9] md:max-h-[32rem]",
         className,
       )}
       onPointerDown={(event) => {

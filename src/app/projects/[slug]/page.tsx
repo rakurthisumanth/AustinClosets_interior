@@ -173,7 +173,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
             />
           </Reveal>
           <div className="mt-12 text-center">
-            <Button href="/contact">Start a Similar Project</Button>
+            <Button href="/contact#consultation">Start a Similar Project</Button>
             <p className="mt-6">
               <Link
                 href="/projects"

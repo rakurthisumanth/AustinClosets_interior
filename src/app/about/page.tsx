@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ConsultationCTA } from "@/components/home/ConsultationCTA";
+import { AnimatedStat } from "@/components/ui/AnimatedStat";
 import { Button } from "@/components/ui/Button";
 import { PageHero } from "@/components/ui/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
 import { images } from "@/data/images";
 import { siteConfig } from "@/data/site";
-import { formatStat } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "About",
@@ -55,7 +55,7 @@ export default function AboutPage() {
       <section className="section-pad bg-cream">
         <div className="container-wide grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
           <Reveal className="lg:col-span-6">
-            <div className="image-reveal relative aspect-[4/5] overflow-hidden">
+            <div className="image-reveal relative aspect-[16/11] overflow-hidden md:aspect-[4/3]">
               <Image
                 src={images.about.studio.src}
                 alt={images.about.studio.alt}
@@ -92,20 +92,12 @@ export default function AboutPage() {
 
       <section className="border-y border-border bg-ivory">
         <div className="container-wide grid grid-cols-1 divide-y divide-border sm:grid-cols-3 sm:divide-x sm:divide-y-0">
-          {[
-            { value: formatStat(stats.yearsExperience), label: "Years Experience" },
-            { value: formatStat(stats.projectsCompleted), label: "Projects" },
-            { value: formatStat(stats.happyClients), label: "Happy Clients" },
-          ].map((stat) => (
-            <div key={stat.label} className="px-6 py-12 text-center">
-              <p className="font-display text-5xl text-charcoal md:text-6xl">
-                {stat.value}
-              </p>
-              <p className="mt-3 text-[0.68rem] font-medium tracking-[0.18em] uppercase text-stone">
-                {stat.label}
-              </p>
-            </div>
-          ))}
+          <AnimatedStat
+            value={stats.yearsExperience}
+            label="Years Experience"
+          />
+          <AnimatedStat value={stats.projectsCompleted} label="Projects" />
+          <AnimatedStat value={stats.happyClients} label="Happy Clients" />
         </div>
       </section>
 
@@ -228,7 +220,7 @@ export default function AboutPage() {
               Let&apos;s Design Something Beautiful Together.
             </h3>
             <div className="mt-8">
-              <Button href="/contact">Book a Consultation</Button>
+              <Button href="/contact#consultation">Book a Consultation</Button>
             </div>
           </Reveal>
         </div>

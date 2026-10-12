@@ -28,7 +28,7 @@ export function IntroSection() {
         </Reveal>
 
         <Reveal className="order-1 lg:order-2 lg:col-span-7" delay={1}>
-          <div className="image-reveal relative aspect-[4/5] overflow-hidden md:aspect-[5/4] lg:aspect-[4/5]">
+          <div className="image-reveal relative aspect-[16/11] overflow-hidden md:aspect-[16/10]">
             <Image
               src={images.intro.src}
               alt={images.intro.alt}

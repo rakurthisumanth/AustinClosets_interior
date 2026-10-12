@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact/ContactForm";
+import { HashScroll } from "@/components/ui/HashScroll";
 import { PageHero } from "@/components/ui/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
 import { images } from "@/data/images";
@@ -21,6 +22,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
+      <HashScroll />
       <PageHero
         eyebrow="Consultation"
         title="Let's Talk About Your Space."
@@ -30,7 +32,10 @@ export default function ContactPage() {
         compact
       />
 
-      <section className="section-pad bg-cream">
+      <section
+        id="consultation"
+        className="scroll-mt-28 section-pad bg-cream !pt-14 md:!pt-16"
+      >
         <div className="container-wide grid gap-14 lg:grid-cols-12">
           <Reveal className="lg:col-span-4">
             <p className="mb-4 text-[0.68rem] font-medium tracking-[0.22em] uppercase text-bronze">

@@ -10,7 +10,9 @@ export const siteConfig = {
   contact: {
     phone: "(512) 555-0148",
     phoneHref: "tel:+15125550148",
-    email: "hello@austinclosets.com",
+    /** Digits only, international format. Overridden by NEXT_PUBLIC_WHATSAPP_NUMBER when set. */
+    whatsappNumber: "15125550148",
+    email: "contact@austinclosetstx.com",
     address: "2140 Westlake Drive, Suite 300",
     city: "Austin, TX 78746",
     region: "United States",

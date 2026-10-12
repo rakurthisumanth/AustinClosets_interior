@@ -60,7 +60,11 @@ export function Header() {
         </nav>
 
         <div className="hidden lg:block">
-          <Button href="/contact" variant="primary" className="!py-3 !px-5">
+          <Button
+            href="/contact#consultation"
+            variant="primary"
+            className="!py-3 !px-5"
+          >
             Book a Consultation
           </Button>
         </div>
@@ -118,7 +122,11 @@ export function Header() {
               </Link>
             ))}
           </div>
-          <Button href="/contact" className="w-full" onClick={closeMenu}>
+          <Button
+            href="/contact#consultation"
+            className="w-full"
+            onClick={closeMenu}
+          >
             Book a Free Consultation
           </Button>
         </nav>

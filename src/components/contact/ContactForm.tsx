@@ -197,18 +197,6 @@ export function ContactForm() {
         </Field>
       </div>
 
-      <Field label="Location" id="location">
-        <input
-          id="location"
-          name="location"
-          autoComplete="address-level2"
-          placeholder="City, State"
-          value={form.location}
-          onChange={(e) => updateField("location", e.target.value)}
-          className={fieldClass(false)}
-        />
-      </Field>
-
       <Field label="Message" id="message">
         <textarea
           id="message"

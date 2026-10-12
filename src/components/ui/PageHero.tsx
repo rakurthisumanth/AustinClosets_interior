@@ -22,7 +22,7 @@ export function PageHero({
     <section
       className={cn(
         "relative flex items-end overflow-hidden bg-charcoal",
-        compact ? "min-h-[58vh]" : "min-h-[72vh]",
+        compact ? "min-h-[42vh] md:min-h-[48vh]" : "min-h-[72vh]",
       )}
     >
       <Image
@@ -34,7 +34,12 @@ export function PageHero({
         className="object-cover"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-charcoal/85 via-charcoal/45 to-charcoal/25" />
-      <div className="container-wide relative z-10 pb-16 pt-32 md:pb-20 md:pt-40">
+      <div
+        className={cn(
+          "container-wide relative z-10",
+          compact ? "pb-10 pt-28 md:pb-14 md:pt-32" : "pb-16 pt-32 md:pb-20 md:pt-40",
+        )}
+      >
         {eyebrow ? (
           <p className="mb-4 text-[0.68rem] font-medium tracking-[0.22em] uppercase text-cream/70">
             {eyebrow}
