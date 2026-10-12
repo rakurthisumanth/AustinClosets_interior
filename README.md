@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AustinClosets
 
-## Getting Started
+Premium luxury interior design website for a USA-based custom home interiors studio.
 
-First, run the development server:
+Built with **Next.js**, **React**, **TypeScript**, and **Tailwind CSS**.
+
+## Brand
+
+**AustinClosets** — original brand identity for this project.
+
+## Getting started
+
+```bash
+npm install
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000).
+
+## Images
+
+All website images are stored locally in `public/images/`.
+
+No remote Unsplash links are used in the app. To replace a photo, overwrite the matching file in `public/images/` (keep the same filename).
+
+## Environment variables
+
+Copy `.env.example` to `.env.local` and configure:
+
+| Variable | Purpose |
+| --- | --- |
+| `NEXT_PUBLIC_SITE_URL` | Canonical site URL for SEO |
+| `NEXT_PUBLIC_WHATSAPP_NUMBER` | WhatsApp number (digits only, international format) |
+| `CONTACT_EMAIL` | Inbox for consultation requests |
+| `SMTP_HOST` / `SMTP_PORT` / `SMTP_USER` / `SMTP_PASSWORD` | Email delivery |
+
+If SMTP is not configured, `POST /api/contact` still validates and accepts requests, then logs them server-side.
+
+## Content editing
+
+CMS-ready data files live in `src/data/`:
+
+- `site.ts` — company info, stats, navigation, contact
+- `services.ts` — service offerings
+- `projects.ts` — portfolio projects
+- `testimonials.ts` — client quotes
+- `images.ts` — shared hero / section imagery paths
+
+## Pages
+
+- `/` Home
+- `/about` About
+- `/services` Services
+- `/projects` Project gallery
+- `/projects/[slug]` Project detail
+- `/contact` Consultation form
+
+## Scripts
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
+npm run start
+npm run lint
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
