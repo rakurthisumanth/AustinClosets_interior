@@ -31,10 +31,22 @@ Copy `.env.example` to `.env.local` and configure:
 | --- | --- |
 | `NEXT_PUBLIC_SITE_URL` | Canonical site URL for SEO |
 | `NEXT_PUBLIC_WHATSAPP_NUMBER` | WhatsApp number (digits only, international format) |
-| `CONTACT_EMAIL` | Inbox for consultation requests |
-| `SMTP_HOST` / `SMTP_PORT` / `SMTP_USER` / `SMTP_PASSWORD` | Email delivery |
+| `CONTACT_EMAIL` | Zoho inbox that receives consultation requests |
+| `SMTP_HOST` | Zoho SMTP host (`smtppro.zoho.com` / `smtppro.zoho.in` for domain mail) |
+| `SMTP_PORT` | `587` (TLS) or `465` (SSL) |
+| `SMTP_SECURE` | `false` for 587, `true` for 465 |
+| `SMTP_USER` | Full Zoho mailbox used to send (usually same as CONTACT_EMAIL) |
+| `SMTP_PASSWORD` | Zoho password or Application-Specific Password (required if MFA is on) |
 
-If SMTP is not configured, `POST /api/contact` still validates and accepts requests, then logs them server-side.
+### Zoho + Vercel setup
+
+1. In Zoho Mail, confirm SMTP access for `contact@austinclosetstx.com`.
+2. If MFA is enabled, generate an **Application-Specific Password**.
+3. For a **paid domain mailbox**, prefer `smtppro.zoho.com` (or `smtppro.zoho.in` if your Zoho data center is India).
+4. Add the same env vars in **Vercel → Project Settings → Environment Variables** (Production + Preview).
+5. Redeploy after saving env vars.
+
+If SMTP is missing or invalid, `POST /api/contact` returns an error (it no longer silently reports success).
 
 ## Content editing
 

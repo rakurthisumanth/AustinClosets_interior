@@ -24,6 +24,7 @@ const initialForm: ContactFormData = {
 
 export function ContactForm() {
   const [form, setForm] = useState<ContactFormData>(initialForm);
+  const [honeypot, setHoneypot] = useState("");
   const [errors, setErrors] = useState<ValidationErrors>({});
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -57,7 +58,7 @@ export function ContactForm() {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, website: honeypot }),
       });
 
       const data = (await response.json()) as { message?: string; errors?: ValidationErrors };
@@ -103,7 +104,21 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} noValidate className="space-y-6">
+    <form onSubmit={onSubmit} noValidate className="relative space-y-6">
+      {/* Honeypot — hidden from users, catches bots */}
+      <div className="absolute -left-[9999px] h-0 w-0 overflow-hidden" aria-hidden="true">
+        <label htmlFor="website">Website</label>
+        <input
+          id="website"
+          name="website"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={honeypot}
+          onChange={(e) => setHoneypot(e.target.value)}
+        />
+      </div>
+
       <div className="grid gap-6 sm:grid-cols-2">
         <Field
           label="First Name"

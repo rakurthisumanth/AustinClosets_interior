@@ -18,15 +18,15 @@ export function AnimatedStat({ value, suffix = "+", label }: AnimatedStatProps) 
     if (!node) return;
 
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReduced) {
-      setDisplay(value);
-      return;
-    }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setStarted(true);
+          if (prefersReduced) {
+            setDisplay(value);
+          } else {
+            setStarted(true);
+          }
           observer.disconnect();
         }
       },
@@ -42,15 +42,18 @@ export function AnimatedStat({ value, suffix = "+", label }: AnimatedStatProps) 
 
     const duration = 1400;
     const start = performance.now();
+    let frame = 0;
 
     const tick = (now: number) => {
       const progress = Math.min((now - start) / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
       setDisplay(Math.round(value * eased));
-      if (progress < 1) requestAnimationFrame(tick);
+      if (progress < 1) {
+        frame = requestAnimationFrame(tick);
+      }
     };
 
-    const frame = requestAnimationFrame(tick);
+    frame = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(frame);
   }, [started, value]);
 
