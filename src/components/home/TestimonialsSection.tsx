@@ -30,7 +30,7 @@ export function TestimonialsSection() {
             eyebrow="Client Voices"
             title="Experiences worth coming home to."
             description="Homeowners share what mattered most—design quality, communication, and craftsmanship."
-            className="mb-12"
+            className="mb-8 md:mb-12"
           />
         </Reveal>
 
@@ -38,12 +38,12 @@ export function TestimonialsSection() {
           <div className="mx-auto max-w-3xl">
             <blockquote
               key={item.id}
-              className="border border-border bg-cream px-8 py-10 text-center md:px-14 md:py-14 animate-[fadeSlide_0.55s_ease]"
+              className="border border-border bg-cream px-5 py-7 text-left animate-[fadeSlide_0.55s_ease] sm:px-8 sm:py-10 sm:text-center md:px-14 md:py-14"
             >
-              <p className="font-display text-2xl leading-relaxed text-charcoal md:text-[1.85rem]">
+              <p className="font-display text-[1.35rem] leading-snug text-charcoal sm:text-2xl sm:leading-relaxed md:text-[1.85rem]">
                 “{item.quote}”
               </p>
-              <footer className="mt-10 border-t border-border pt-6">
+              <footer className="mt-6 border-t border-border pt-5 sm:mt-10 sm:pt-6">
                 <cite className="not-italic">
                   <span className="block text-sm font-medium tracking-wide text-charcoal">
                     {item.name}
@@ -56,7 +56,7 @@ export function TestimonialsSection() {
             </blockquote>
 
             <div
-              className="mt-8 flex items-center justify-center gap-3"
+              className="mt-6 flex items-center justify-center gap-3 sm:mt-8"
               role="tablist"
               aria-label="Testimonial reviews"
             >

@@ -34,7 +34,6 @@ export function ProjectCard({
           {project.categoryLabel}
         </p>
         <h3 className="font-display mt-1 text-2xl leading-tight">{project.title}</h3>
-        <p className="mt-1 text-sm text-white/75">{project.location}</p>
       </div>
     </div>
   );

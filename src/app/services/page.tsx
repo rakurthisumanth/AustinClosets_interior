@@ -32,8 +32,8 @@ export default function ServicesPage() {
         imageAlt={images.hero.services.alt}
       />
 
-      <section className="section-pad bg-cream">
-        <div className="container-wide space-y-20 md:space-y-28">
+      <section className="section-pad bg-cream !pt-10 pb-24 md:!pt-[clamp(4.5rem,8vw,7.5rem)] md:pb-[clamp(4.5rem,8vw,7.5rem)]">
+        <div className="container-wide space-y-14 md:space-y-28">
           {services.map((service, index) => {
             const reverse = index % 2 === 1;
             const number = String(index + 1).padStart(2, "0");
@@ -42,9 +42,9 @@ export default function ServicesPage() {
               <article
                 key={service.id}
                 id={service.slug}
-                className="scroll-mt-28"
+                className="scroll-mt-24 md:scroll-mt-28"
               >
-                <div className="grid items-start gap-10 lg:grid-cols-12 lg:gap-x-0 lg:gap-y-10">
+                <div className="grid items-start gap-6 md:gap-10 lg:grid-cols-12 lg:gap-x-0 lg:gap-y-10">
                   <Reveal
                     className={
                       reverse
@@ -52,7 +52,7 @@ export default function ServicesPage() {
                         : "lg:col-span-6"
                     }
                   >
-                    <div className="image-reveal relative aspect-[16/11] overflow-hidden md:aspect-[5/4]">
+                    <div className="image-reveal relative aspect-[16/10] overflow-hidden md:aspect-[5/4]">
                       <Image
                         src={service.image}
                         alt={service.imageAlt}
@@ -72,16 +72,16 @@ export default function ServicesPage() {
                     delay={1}
                   >
                     <div className="flex h-full flex-col">
-                      <p className="mb-3 text-[0.68rem] font-medium tracking-[0.22em] uppercase text-bronze">
+                      <p className="mb-2 text-[0.62rem] font-medium tracking-[0.18em] uppercase text-bronze md:mb-3 md:text-[0.68rem] md:tracking-[0.22em]">
                         {number}
                       </p>
-                      <h2 className="font-display text-[clamp(2rem,3.5vw,3rem)] text-charcoal">
+                      <h2 className="font-display text-[clamp(1.7rem,6vw,3rem)] text-charcoal">
                         {service.name}
                       </h2>
-                      <p className="mt-5 text-base leading-relaxed text-stone md:text-lg">
+                      <p className="mt-3.5 text-[0.95rem] leading-relaxed text-stone md:mt-5 md:text-lg">
                         {service.description}
                       </p>
-                      <ul className="mt-8 space-y-3.5">
+                      <ul className="mt-5 space-y-2.5 md:mt-8 md:space-y-3.5">
                         {service.benefits.map((benefit) => (
                           <li
                             key={benefit}
@@ -95,11 +95,11 @@ export default function ServicesPage() {
                           </li>
                         ))}
                       </ul>
-                      <div className="mt-10 pt-2">
+                      <div className="mt-7 md:mt-10 md:pt-2">
                         <Button
-                          href="/contact#consultation"
+                          href="/contact#consultation-form"
                           variant="ghost"
-                          className="!px-8"
+                          className="w-full !px-8 !py-3.5 sm:w-auto"
                         >
                           Discuss Your Project
                         </Button>

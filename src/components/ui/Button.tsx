@@ -27,7 +27,7 @@ const variantClass: Record<ButtonVariant, string> = {
 };
 
 const base =
-  "inline-flex items-center justify-center gap-2 px-7 py-3.5 text-[0.7rem] font-medium tracking-[0.18em] uppercase transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed";
+  "inline-flex cursor-pointer items-center justify-center gap-2 px-7 py-3.5 text-[0.7rem] font-medium tracking-[0.18em] uppercase transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed";
 
 export function Button(props: ButtonAsButton | ButtonAsLink) {
   const { variant = "primary", className, children } = props;

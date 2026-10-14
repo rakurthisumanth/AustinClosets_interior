@@ -121,17 +121,27 @@ img {
 }
 
 .section-pad {
-  padding-block: clamp(4.5rem, 8vw, 7.5rem);
+  padding-block: clamp(3.25rem, 8vw, 7.5rem);
 }
 
 .container-site {
-  width: min(100% - 2.5rem, 72rem);
+  width: min(100% - 1.5rem, 72rem);
   margin-inline: auto;
 }
 
 .container-wide {
-  width: min(100% - 2.5rem, 84rem);
+  width: min(100% - 1.5rem, 84rem);
   margin-inline: auto;
+}
+
+@media (min-width: 768px) {
+  .container-site {
+    width: min(100% - 2.5rem, 72rem);
+  }
+
+  .container-wide {
+    width: min(100% - 2.5rem, 84rem);
+  }
 }
 
 .text-balance {
@@ -243,6 +253,234 @@ img {
   }
 }
 
+@keyframes projectsFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-1deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(1.5deg);
+  }
+}
+
+@keyframes projectsRail {
+  0% {
+    transform: translateY(-8%);
+  }
+  100% {
+    transform: translateY(8%);
+  }
+}
+
+.consult-guide {
+  color: var(--bronze);
+}
+
+.consult-guide-beacon {
+  position: absolute;
+  width: 0;
+  height: 0;
+  transform: translate(-50%, 0);
+}
+
+.consult-guide-arrow {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  transform: translate(-50%, 0);
+  animation: consultArrowBounce 1.2s ease-in-out infinite;
+}
+
+.consult-guide-ring {
+  fill: rgba(250, 248, 245, 0.95);
+  stroke: currentColor;
+  stroke-width: 1.5;
+}
+
+.consult-guide-label {
+  padding: 0.35rem 0.7rem;
+  border: 1px solid rgba(139, 115, 85, 0.28);
+  background: rgba(250, 248, 245, 0.95);
+  color: var(--charcoal);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  box-shadow: 0 8px 24px rgba(26, 25, 24, 0.12);
+}
+
+.consult-orbit {
+  position: absolute;
+  left: 0;
+  top: 0.2rem;
+  border: 1.5px solid rgba(139, 115, 85, 0.35);
+  border-radius: 999px;
+  transform: translate(-50%, -50%);
+}
+
+.consult-orbit-a {
+  width: 4.5rem;
+  height: 4.5rem;
+  animation: consultOrbitPulse 2s ease-out infinite;
+}
+
+.consult-orbit-b {
+  width: 6.5rem;
+  height: 6.5rem;
+  animation: consultOrbitPulse 2s ease-out infinite 0.55s;
+}
+
+.consult-spark {
+  position: absolute;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 999px;
+  background: var(--bronze);
+  transform: translate(-50%, -50%);
+  opacity: 0.85;
+}
+
+.consult-spark-1 {
+  animation: consultSpark 2.4s ease-in-out infinite;
+}
+
+.consult-spark-2 {
+  animation: consultSpark 2.4s ease-in-out infinite 0.4s;
+}
+
+.consult-spark-3 {
+  animation: consultSpark 2.4s ease-in-out infinite 0.8s;
+}
+
+.consult-cta-pulse {
+  animation: consultCtaPulse 1.4s ease-in-out infinite;
+}
+
+@keyframes consultArrowBounce {
+  0%,
+  100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, 8px);
+  }
+}
+
+@keyframes consultOrbitPulse {
+  0% {
+    opacity: 0.55;
+    transform: translate(-50%, -50%) scale(0.72);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.25);
+  }
+}
+
+@keyframes consultSpark {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 18px) scale(0.6);
+  }
+  30% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(calc(-50% + var(--spark-x, 0px)), -28px) scale(1);
+  }
+}
+
+.consult-spark-1 {
+  --spark-x: -18px;
+}
+
+.consult-spark-2 {
+  --spark-x: 0px;
+}
+
+.consult-spark-3 {
+  --spark-x: 18px;
+}
+
+@keyframes consultCtaPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(139, 115, 85, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(139, 115, 85, 0);
+  }
+}
+
+.projects-float {
+  color: var(--bronze);
+  animation: projectsFloat 7.5s ease-in-out infinite;
+}
+
+.projects-float-card {
+  display: flex;
+  width: 5.75rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.85rem 0.55rem;
+  border: 1px solid rgba(139, 115, 85, 0.18);
+  background: rgba(250, 248, 245, 0.72);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 10px 28px rgba(26, 25, 24, 0.06);
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.projects-float-card:hover {
+  transform: translateY(-4px) scale(1.04);
+  border-color: rgba(139, 115, 85, 0.4);
+  background: rgba(250, 248, 245, 0.95);
+  box-shadow: 0 14px 34px rgba(26, 25, 24, 0.1);
+}
+
+.projects-float-card span {
+  max-width: 100%;
+  text-align: center;
+  font-size: 0.58rem;
+  line-height: 1.35;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+
+.projects-rail {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(139, 115, 85, 0.28),
+    transparent
+  );
+  animation: projectsRail 12s ease-in-out infinite alternate;
+}
+
+.projects-rail-left {
+  left: 4.75rem;
+}
+
+.projects-rail-right {
+  right: 4.75rem;
+  animation-delay: -4s;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -255,6 +493,15 @@ img {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
+  }
+
+  .projects-float,
+  .projects-rail,
+  .consult-guide-arrow,
+  .consult-orbit,
+  .consult-spark,
+  .consult-cta-pulse {
+    animation: none !important;
   }
 
   @keyframes fadeSlide {

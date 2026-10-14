@@ -8,20 +8,17 @@ export const siteConfig = {
     "AustinClosets designs Closets Main, custom cabinets, bedrooms, living spaces, and home offices for residences across the United States.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://austinclosets.com",
   contact: {
-    phone: "(512) 555-0148",
-    phoneHref: "tel:+15125550148",
+    phone: "+1 7373913259",
+    phoneHref: "tel:+17373913259",
     /** Digits only, international format. Overridden by NEXT_PUBLIC_WHATSAPP_NUMBER when set. */
-    whatsappNumber: "15125550148",
+    whatsappNumber: "17373913259",
     email: "contact@austinclosetstx.com",
     address: "2140 Westlake Drive, Suite 300",
     city: "Austin, TX 78746",
     region: "United States",
   },
   social: {
-    instagram: "https://instagram.com",
-    facebook: "https://facebook.com",
-    pinterest: "https://pinterest.com",
-    linkedin: "https://linkedin.com",
+    instagram: "https://www.instagram.com/austinclosets/",
   },
   stats: {
     yearsExperience: 10,

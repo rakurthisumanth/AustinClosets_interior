@@ -22,7 +22,9 @@ export function PageHero({
     <section
       className={cn(
         "relative flex items-end overflow-hidden bg-charcoal",
-        compact ? "min-h-[42vh] md:min-h-[48vh]" : "min-h-[72vh]",
+        compact
+          ? "min-h-[38vh] md:min-h-[48vh]"
+          : "min-h-[58vh] md:min-h-[72vh]",
       )}
     >
       <Image
@@ -37,19 +39,21 @@ export function PageHero({
       <div
         className={cn(
           "container-wide relative z-10",
-          compact ? "pb-10 pt-28 md:pb-14 md:pt-32" : "pb-16 pt-32 md:pb-20 md:pt-40",
+          compact
+            ? "pb-8 pt-24 md:pb-14 md:pt-32"
+            : "pb-10 pt-24 md:pb-20 md:pt-40",
         )}
       >
         {eyebrow ? (
-          <p className="mb-4 text-[0.68rem] font-medium tracking-[0.22em] uppercase text-cream/70">
+          <p className="mb-3 text-[0.62rem] font-medium tracking-[0.18em] uppercase text-cream/70 md:mb-4 md:text-[0.68rem] md:tracking-[0.22em]">
             {eyebrow}
           </p>
         ) : null}
-        <h1 className="font-display max-w-3xl text-[clamp(2.5rem,6vw,4.75rem)] leading-[1.05] tracking-[-0.02em] text-cream text-balance">
+        <h1 className="font-display max-w-3xl text-[clamp(2.1rem,9vw,4.75rem)] leading-[1.05] tracking-[-0.02em] text-cream text-balance">
           {title}
         </h1>
         {description ? (
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-cream/80 md:text-lg">
+          <p className="mt-4 max-w-xl text-[0.95rem] leading-relaxed text-cream/80 md:mt-6 md:text-lg">
             {description}
           </p>
         ) : null}

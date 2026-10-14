@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { BeforeAfterSection } from "@/components/home/BeforeAfterSection";
 import { ConsultationCTA } from "@/components/home/ConsultationCTA";
-import { FeaturedAttract } from "@/components/home/FeaturedAttract";
 import { Hero } from "@/components/home/Hero";
 import { HighlightStrip } from "@/components/home/HighlightStrip";
 import { IntroSection } from "@/components/home/IntroSection";
@@ -34,7 +33,6 @@ export default function HomePage() {
       <IntroSection />
       <HighlightStrip />
       <ServicesSection />
-      <FeaturedAttract />
       <WhyChooseUs />
       <ProcessSection />
       <BeforeAfterSection />

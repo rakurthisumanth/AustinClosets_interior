@@ -20,7 +20,7 @@ export function GetInTouchSection() {
                 design team will get back to you.
               </p>
               <div className="mt-8">
-                <Button href="/contact">Book a Free Consultation</Button>
+                <Button href="/contact#consultation-form">Book a Free Consultation</Button>
               </div>
             </div>
 

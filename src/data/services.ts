@@ -15,8 +15,8 @@ export const services: Service[] = [
       "Premium finishes, hardware, and integrated lighting",
       "Measured, fabricated, and installed end to end",
     ],
-    image: "/images/service-closets-main.jpg",
-    imageAlt: "Flagship luxury walk-in closet with island and warm lighting",
+    image: "/images/service-closets-main-v2.jpg",
+    imageAlt: "Luxury taupe walk-in closet with marble island and LED shelving",
   },
   {
     id: "2",
@@ -32,8 +32,8 @@ export const services: Service[] = [
       "Built-ins that blend with existing architecture",
       "Precision fabrication and professional installation",
     ],
-    image: "/images/service-cabinets.jpg",
-    imageAlt: "Custom wood cabinetry with clean modern detailing",
+    image: "/images/service-cabinets-v2.jpg",
+    imageAlt: "Modern kitchen with custom cabinets, marble counters, and brass pendants",
   },
   {
     id: "3",
@@ -49,8 +49,8 @@ export const services: Service[] = [
       "Island units, jewelry drawers, and specialized storage",
       "Measured, fabricated, and installed by specialists",
     ],
-    image: "/images/service-custom-closets.jpg",
-    imageAlt: "Luxury walk-in closet with warm wood cabinetry and soft lighting",
+    image: "/images/service-custom-closets-v2.jpg",
+    imageAlt: "Custom walk-in closet with island, vanity, and illuminated shelving",
   },
   {
     id: "4",
@@ -66,8 +66,8 @@ export const services: Service[] = [
       "Layered lighting and textile guidance",
       "Cohesive color and material stories",
     ],
-    image: "/images/service-living.jpg",
-    imageAlt: "Elegant living room with natural light and tailored seating",
+    image: "/images/service-living-v2.jpg",
+    imageAlt: "Warm modern living room with built-in shelving and fireplace wall",
   },
   {
     id: "5",
@@ -83,8 +83,8 @@ export const services: Service[] = [
       "Soft, durable material selections",
       "Lighting designed for morning and evening rituals",
     ],
-    image: "/images/service-bedrooms.jpg",
-    imageAlt: "Luxury bedroom with neutral palette and custom headboard wall",
+    image: "/images/service-bedrooms-v2.jpg",
+    imageAlt: "Serene bedroom with sage accent wall and custom furnishings",
   },
   {
     id: "6",
@@ -100,8 +100,8 @@ export const services: Service[] = [
       "Acoustic and lighting considerations",
       "Finishes that complement adjoining rooms",
     ],
-    image: "/images/service-offices.jpg",
-    imageAlt: "Contemporary home office with built-in shelving and desk",
+    image: "/images/service-offices-v2.jpg",
+    imageAlt: "Sunlit home office with custom cabinetry and executive desk",
   },
   {
     id: "7",
@@ -117,8 +117,8 @@ export const services: Service[] = [
       "Durable hardware for high-use zones",
       "Solutions scaled to your square footage",
     ],
-    image: "/images/service-storage.jpg",
-    imageAlt: "Custom kitchen pantry with organized open shelving",
+    image: "/images/service-storage-v2.jpg",
+    imageAlt: "Custom mudroom, laundry, and pantry storage with green cabinetry",
   },
   {
     id: "8",
@@ -134,8 +134,8 @@ export const services: Service[] = [
       "Project management through installation",
       "A single design vision across every room",
     ],
-    image: "/images/service-full-interior.jpg",
-    imageAlt: "Open luxury residence with cohesive interior design throughout",
+    image: "/images/service-full-interior-v2.jpg",
+    imageAlt: "Complete interior design collage across living, kitchen, and suites",
   },
 ];
 

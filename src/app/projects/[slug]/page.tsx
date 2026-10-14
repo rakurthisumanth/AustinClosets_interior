@@ -56,7 +56,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal/85 via-charcoal/40 to-charcoal/25" />
         <div className="container-wide relative z-10 flex min-h-[70vh] flex-col justify-end pb-16 pt-32">
           <p className="text-[0.68rem] tracking-[0.2em] uppercase text-cream/70">
-            {project.categoryLabel} · {project.location}
+            {project.categoryLabel}
           </p>
           <h1 className="font-display mt-3 max-w-3xl text-[clamp(2.5rem,6vw,4.5rem)] leading-[1.05] text-cream">
             {project.title}
@@ -81,12 +81,6 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
                   Category
                 </dt>
                 <dd className="mt-2 text-charcoal">{project.categoryLabel}</dd>
-              </div>
-              <div>
-                <dt className="text-[0.68rem] tracking-[0.16em] uppercase text-stone">
-                  Location
-                </dt>
-                <dd className="mt-2 text-charcoal">{project.location}</dd>
               </div>
               <div>
                 <dt className="text-[0.68rem] tracking-[0.16em] uppercase text-stone">
@@ -173,7 +167,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
             />
           </Reveal>
           <div className="mt-12 text-center">
-            <Button href="/contact#consultation">Start a Similar Project</Button>
+            <Button href="/contact#consultation-form">Start a Similar Project</Button>
             <p className="mt-6">
               <Link
                 href="/projects"

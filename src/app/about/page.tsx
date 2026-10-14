@@ -52,10 +52,10 @@ export default function AboutPage() {
         imageAlt={images.hero.about.alt}
       />
 
-      <section className="section-pad bg-cream">
-        <div className="container-wide grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
-          <Reveal className="lg:col-span-6">
-            <div className="image-reveal relative aspect-[16/11] overflow-hidden md:aspect-[4/3]">
+      <section className="section-pad bg-cream !pt-10 md:!pt-[clamp(4.5rem,8vw,7.5rem)]">
+        <div className="container-wide grid items-center gap-8 md:gap-12 lg:grid-cols-12 lg:gap-16">
+          <Reveal className="order-2 lg:order-1 lg:col-span-6">
+            <div className="image-reveal relative aspect-[16/10] overflow-hidden md:aspect-[4/3]">
               <Image
                 src={images.about.studio.src}
                 alt={images.about.studio.alt}
@@ -65,14 +65,14 @@ export default function AboutPage() {
               />
             </div>
           </Reveal>
-          <Reveal className="lg:col-span-6" delay={1}>
-            <p className="mb-4 text-[0.68rem] font-medium tracking-[0.22em] uppercase text-bronze">
+          <Reveal className="order-1 lg:order-2 lg:col-span-6" delay={1}>
+            <p className="mb-3 text-[0.62rem] font-medium tracking-[0.18em] uppercase text-bronze md:mb-4 md:text-[0.68rem] md:tracking-[0.22em]">
               Our Story
             </p>
-            <h2 className="font-display text-[clamp(2rem,4vw,3.25rem)] leading-[1.1] text-charcoal">
+            <h2 className="font-display text-[clamp(1.75rem,6vw,3.25rem)] leading-[1.1] text-charcoal">
               A studio devoted to livable luxury.
             </h2>
-            <div className="mt-6 space-y-4 text-base leading-relaxed text-stone md:text-lg">
+            <div className="mt-4 space-y-3.5 text-[0.95rem] leading-relaxed text-stone md:mt-6 md:space-y-4 md:text-lg">
               <p>
                 AustinClosets was founded on a simple belief: the most
                 beautiful homes are the ones that support real life. We design
@@ -91,7 +91,7 @@ export default function AboutPage() {
       </section>
 
       <section className="border-y border-border bg-ivory">
-        <div className="container-wide grid grid-cols-1 divide-y divide-border sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+        <div className="container-wide grid grid-cols-3 divide-x divide-border">
           <AnimatedStat
             value={stats.yearsExperience}
             label="Years Experience"
@@ -101,18 +101,18 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section-pad bg-cream">
-        <div className="container-wide grid gap-12 lg:grid-cols-12">
+      <section className="section-pad bg-cream !py-12 md:!py-[clamp(4.5rem,8vw,7.5rem)]">
+        <div className="container-wide grid gap-6 md:gap-12 lg:grid-cols-12">
           <Reveal className="lg:col-span-5">
-            <p className="mb-4 text-[0.68rem] font-medium tracking-[0.22em] uppercase text-bronze">
+            <p className="mb-3 text-[0.62rem] font-medium tracking-[0.18em] uppercase text-bronze md:mb-4 md:text-[0.68rem] md:tracking-[0.22em]">
               Philosophy
             </p>
-            <h2 className="font-display text-[clamp(2rem,4vw,3rem)] leading-[1.12] text-charcoal">
+            <h2 className="font-display text-[clamp(1.7rem,6vw,3rem)] leading-[1.12] text-charcoal">
               Beauty should serve the way you live.
             </h2>
           </Reveal>
           <Reveal className="lg:col-span-6 lg:col-start-7" delay={1}>
-            <p className="text-base leading-relaxed text-stone md:text-lg">
+            <p className="text-[0.95rem] leading-relaxed text-stone md:text-lg">
               We believe luxury interiors are defined by clarity—proportion,
               material honesty, and storage that disappears into architecture.
               Our philosophy favors warm neutrals, lasting craftsmanship, and
@@ -122,16 +122,16 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section-pad bg-ivory">
-        <div className="container-wide grid items-center gap-12 lg:grid-cols-12">
+      <section className="section-pad bg-ivory !py-12 md:!py-[clamp(4.5rem,8vw,7.5rem)]">
+        <div className="container-wide grid items-center gap-8 md:gap-12 lg:grid-cols-12">
           <Reveal className="order-2 lg:order-1 lg:col-span-5">
-            <p className="mb-4 text-[0.68rem] font-medium tracking-[0.22em] uppercase text-bronze">
+            <p className="mb-3 text-[0.62rem] font-medium tracking-[0.18em] uppercase text-bronze md:mb-4 md:text-[0.68rem] md:tracking-[0.22em]">
               Our Approach
             </p>
-            <h2 className="font-display text-[clamp(2rem,4vw,3rem)] text-charcoal">
+            <h2 className="font-display text-[clamp(1.7rem,6vw,3rem)] text-charcoal">
               Listen. Design. Refine. Deliver.
             </h2>
-            <p className="mt-6 text-base leading-relaxed text-stone md:text-lg">
+            <p className="mt-4 text-[0.95rem] leading-relaxed text-stone md:mt-6 md:text-lg">
               Collaboration is central to our process. We translate your
               routines and preferences into drawings, material boards, and
               custom millwork—then guide fabrication and installation with the
@@ -139,7 +139,7 @@ export default function AboutPage() {
             </p>
           </Reveal>
           <Reveal className="order-1 lg:order-2 lg:col-span-7" delay={1}>
-            <div className="image-reveal relative aspect-[5/4] overflow-hidden">
+            <div className="image-reveal relative aspect-[16/10] overflow-hidden md:aspect-[5/4]">
               <Image
                 src={images.about.philosophy.src}
                 alt={images.about.philosophy.alt}
@@ -152,17 +152,17 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section-pad bg-cream">
+      <section className="section-pad bg-cream !py-12 md:!py-[clamp(4.5rem,8vw,7.5rem)]">
         <div className="container-wide">
           <Reveal>
             <div className="max-w-2xl">
-              <p className="mb-4 text-[0.68rem] font-medium tracking-[0.22em] uppercase text-bronze">
+              <p className="mb-3 text-[0.62rem] font-medium tracking-[0.18em] uppercase text-bronze md:mb-4 md:text-[0.68rem] md:tracking-[0.22em]">
                 Commitment to Quality
               </p>
-              <h2 className="font-display text-[clamp(2rem,4vw,3rem)] text-charcoal">
+              <h2 className="font-display text-[clamp(1.7rem,6vw,3rem)] text-charcoal">
                 Details you can feel every day.
               </h2>
-              <p className="mt-6 text-base leading-relaxed text-stone md:text-lg">
+              <p className="mt-4 text-[0.95rem] leading-relaxed text-stone md:mt-6 md:text-lg">
                 From soft-close drawers to finish alignment and lighting
                 placement, quality is measured in the moments you live with the
                 work—not just the day of installation. We partner with trusted
@@ -173,15 +173,15 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section-pad bg-ivory">
+      <section className="section-pad bg-ivory !py-12 md:!py-[clamp(4.5rem,8vw,7.5rem)]">
         <div className="container-wide">
           <Reveal>
-            <div className="mb-12 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+            <div className="mb-8 flex flex-col gap-6 md:mb-12 md:gap-8 lg:flex-row lg:items-end lg:justify-between">
               <div className="max-w-xl">
-                <p className="mb-4 text-[0.68rem] font-medium tracking-[0.22em] uppercase text-bronze">
+                <p className="mb-3 text-[0.62rem] font-medium tracking-[0.18em] uppercase text-bronze md:mb-4 md:text-[0.68rem] md:tracking-[0.22em]">
                   Our Team
                 </p>
-                <h2 className="font-display text-[clamp(2rem,4vw,3rem)] text-charcoal">
+                <h2 className="font-display text-[clamp(1.7rem,6vw,3rem)] text-charcoal">
                   Designers and makers, side by side.
                 </h2>
               </div>
@@ -197,17 +197,17 @@ export default function AboutPage() {
             </div>
           </Reveal>
 
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-5 sm:gap-6 md:grid-cols-3">
             {team.map((member, index) => (
               <Reveal key={member.role} delay={(index % 3) as 0 | 1 | 2}>
-                <article className="border-t border-border pt-6">
-                  <h3 className="font-display text-2xl text-charcoal">
+                <article className="border-t border-border pt-5 md:pt-6">
+                  <h3 className="font-display text-xl text-charcoal md:text-2xl">
                     {member.name}
                   </h3>
-                  <p className="mt-2 text-[0.68rem] tracking-[0.16em] uppercase text-bronze">
+                  <p className="mt-2 text-[0.65rem] tracking-[0.14em] uppercase text-bronze md:text-[0.68rem] md:tracking-[0.16em]">
                     {member.role}
                   </p>
-                  <p className="mt-4 text-sm leading-relaxed text-stone">
+                  <p className="mt-3 text-sm leading-relaxed text-stone md:mt-4">
                     {member.focus}
                   </p>
                 </article>
@@ -215,12 +215,17 @@ export default function AboutPage() {
             ))}
           </div>
 
-          <Reveal className="mt-16 text-center">
-            <h3 className="font-display text-[clamp(1.75rem,3vw,2.75rem)] text-charcoal">
+          <Reveal className="mt-12 text-center md:mt-16">
+            <h3 className="font-display text-[clamp(1.55rem,5vw,2.75rem)] text-charcoal">
               Let&apos;s Design Something Beautiful Together.
             </h3>
-            <div className="mt-8">
-              <Button href="/contact#consultation">Book a Consultation</Button>
+            <div className="mt-6 md:mt-8">
+              <Button
+                href="/contact#consultation-form"
+                className="w-full !py-3.5 sm:w-auto"
+              >
+                Book a Consultation
+              </Button>
             </div>
           </Reveal>
         </div>

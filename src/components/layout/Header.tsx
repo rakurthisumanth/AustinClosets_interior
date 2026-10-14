@@ -27,6 +27,10 @@ export function Header() {
     };
   }, [open]);
 
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
   const closeMenu = () => setOpen(false);
 
   return (
@@ -36,8 +40,8 @@ export function Header() {
         scrolled && "shadow-[0_1px_0_rgba(26,25,24,0.06)]",
       )}
     >
-      <div className="container-wide flex h-[4.5rem] items-center justify-between md:h-[5.25rem]">
-        <Logo />
+      <div className="container-wide flex h-[4.25rem] items-center justify-between md:h-[5.75rem]">
+        <Logo className="max-w-[72%] sm:max-w-none" />
 
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
           {siteConfig.navigation.map((item) => {
@@ -59,9 +63,9 @@ export function Header() {
           })}
         </nav>
 
-        <div className="hidden lg:block">
+        <div className="hidden lg:block" data-consult-cta>
           <Button
-            href="/contact#consultation"
+            href="/contact#consultation-form"
             variant="primary"
             className="!py-3 !px-5"
           >
@@ -71,7 +75,7 @@ export function Header() {
 
         <button
           type="button"
-          className="relative z-50 flex h-11 w-11 items-center justify-center text-charcoal lg:hidden"
+          className="relative z-50 -mr-1 flex h-11 w-11 items-center justify-center text-charcoal lg:hidden"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           onClick={() => setOpen((value) => !value)}
@@ -102,33 +106,54 @@ export function Header() {
 
       <div
         className={cn(
-          "fixed inset-0 top-[4.5rem] bg-white transition-all duration-500 lg:hidden",
-          open ? "visible opacity-100" : "invisible opacity-0 pointer-events-none",
+          "fixed inset-0 top-[4.25rem] bg-cream transition-all duration-400 lg:hidden md:top-[5.75rem]",
+          open
+            ? "visible opacity-100"
+            : "invisible pointer-events-none opacity-0",
         )}
       >
         <nav
-          className="container-site flex h-full flex-col justify-between py-10"
+          className="container-wide flex h-[calc(100dvh-4.25rem)] flex-col pb-[calc(1rem+env(safe-area-inset-bottom))] pt-5 md:h-[calc(100dvh-5.75rem)] md:pt-8"
           aria-label="Mobile"
         >
-          <div className="flex flex-col gap-6">
-            {siteConfig.navigation.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={closeMenu}
-                className="font-display text-3xl text-charcoal"
-              >
-                {item.label}
-              </Link>
-            ))}
+          <p className="mb-4 text-[0.62rem] font-medium tracking-[0.2em] uppercase text-bronze md:hidden">
+            Menu
+          </p>
+
+          <div className="flex flex-1 flex-col overflow-y-auto">
+            {siteConfig.navigation.map((item) => {
+              const active = pathname === item.href;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={closeMenu}
+                  className={cn(
+                    "border-b border-border py-3.5 font-display text-[1.75rem] leading-none transition-colors md:py-4 md:text-[2rem]",
+                    active ? "text-charcoal" : "text-stone",
+                  )}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
           </div>
-          <Button
-            href="/contact#consultation"
-            className="w-full"
-            onClick={closeMenu}
-          >
-            Book a Free Consultation
-          </Button>
+
+          <div className="mt-6 border-t border-border pt-5 md:mt-8 md:pt-6">
+            <Button
+              href="/contact#consultation-form"
+              className="w-full !py-4"
+              onClick={closeMenu}
+            >
+              Book a Free Consultation
+            </Button>
+            <a
+              href={siteConfig.contact.phoneHref}
+              className="mt-4 block text-center text-[0.78rem] tracking-[0.06em] text-stone"
+            >
+              Call {siteConfig.contact.phone}
+            </a>
+          </div>
         </nav>
       </div>
     </header>

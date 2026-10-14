@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { ConsultationCTA } from "@/components/home/ConsultationCTA";
 import { ProjectGallery } from "@/components/projects/ProjectGallery";
 import { PageHero } from "@/components/ui/PageHero";
-import { Reveal } from "@/components/ui/Reveal";
 import { images } from "@/data/images";
 import { siteConfig } from "@/data/site";
 
@@ -25,16 +24,14 @@ export default function ProjectsPage() {
       <PageHero
         eyebrow="Portfolio"
         title="Work that feels lived in."
-        description="Explore selected residential projects—each one tailored to the architecture, routines, and style of the homeowners who call it home."
+        description="Browse each project, then click any image to drag the before-and-after comparison."
         image={images.hero.projects.src}
         imageAlt={images.hero.projects.alt}
       />
 
       <section className="section-pad bg-cream">
         <div className="container-wide">
-          <Reveal>
-            <ProjectGallery />
-          </Reveal>
+          <ProjectGallery />
         </div>
       </section>
 

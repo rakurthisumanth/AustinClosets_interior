@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Outfit } from "next/font/google";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
-import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
+import { ConsultGuide } from "@/components/layout/ConsultGuide";
+import { FloatingActions } from "@/components/layout/FloatingActions";
 import { siteConfig } from "@/data/site";
 import "./globals.css";
 
@@ -58,7 +59,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
-        <WhatsAppButton />
+        <FloatingActions />
+        <ConsultGuide />
       </body>
     </html>
   );

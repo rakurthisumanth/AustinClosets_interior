@@ -45,13 +45,17 @@ export function ConsultationCTA({
             <li>Austin-based designers</li>
           </ul>
 
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button href="/contact#consultation" variant="light">
+          <div className="mt-8 flex w-full flex-col items-stretch justify-center gap-3 sm:mt-10 sm:w-auto sm:flex-row sm:items-center sm:gap-4">
+            <Button
+              href="/contact#consultation-form"
+              variant="light"
+              className="w-full !py-3.5 sm:w-auto"
+            >
               {buttonLabel}
             </Button>
             <a
               href={siteConfig.contact.phoneHref}
-              className="text-[0.72rem] font-medium tracking-[0.16em] uppercase text-cream/80 underline-offset-4 transition-colors hover:text-cream hover:underline"
+              className="py-2 text-center text-[0.72rem] font-medium tracking-[0.16em] uppercase text-cream/80 underline-offset-4 transition-colors hover:text-cream hover:underline"
             >
               Or call {siteConfig.contact.phone}
             </a>

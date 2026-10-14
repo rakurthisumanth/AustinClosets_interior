@@ -64,8 +64,8 @@ export function BeforeAfterSlider({
         src={afterSrc}
         alt={afterAlt}
         fill
-        sizes="(max-width: 1024px) 100vw, 70vw"
-        className="object-cover"
+        sizes="(max-width: 1024px) 100vw, 90vw"
+        className="object-cover object-center"
         draggable={false}
       />
 
@@ -77,8 +77,8 @@ export function BeforeAfterSlider({
           src={beforeSrc}
           alt={beforeAlt}
           fill
-          sizes="(max-width: 1024px) 100vw, 70vw"
-          className="object-cover"
+          sizes="(max-width: 1024px) 100vw, 90vw"
+          className="object-cover object-center"
           draggable={false}
         />
       </div>
