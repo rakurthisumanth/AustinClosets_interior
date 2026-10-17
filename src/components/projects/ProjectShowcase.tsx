@@ -81,52 +81,102 @@ export function ProjectShowcase() {
       </div>
 
       {active ? (
-        <div
-          className="fixed inset-0 z-[60] flex items-end justify-center bg-charcoal/70 backdrop-blur-sm md:items-center md:p-8"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby={titleId}
-          onClick={() => setActive(null)}
-        >
+        <>
+          {/* Mobile: full-screen vertical drag slider */}
           <div
-            className="relative max-h-[92dvh] w-full overflow-y-auto bg-cream shadow-[0_24px_80px_rgba(26,25,24,0.35)] md:max-h-none md:max-w-5xl md:overflow-hidden"
-            onClick={(event) => event.stopPropagation()}
+            className="fixed inset-0 z-[70] flex flex-col bg-charcoal md:hidden"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby={titleId}
           >
-            <div className="sticky top-0 z-10 flex items-start justify-between gap-4 border-b border-border bg-cream px-4 py-4 md:static md:px-8 md:py-5">
+            <div className="flex shrink-0 items-center justify-between gap-3 px-4 pb-3 pt-[max(0.85rem,env(safe-area-inset-top))]">
               <div className="min-w-0">
-                <p className="text-[0.65rem] tracking-[0.18em] uppercase text-bronze">
+                <p className="text-[0.58rem] tracking-[0.16em] uppercase text-taupe">
                   {active.categoryLabel}
                 </p>
                 <h3
                   id={titleId}
-                  className="font-display mt-1 text-xl text-charcoal md:text-3xl"
+                  className="font-display mt-0.5 truncate text-lg text-cream"
                 >
                   {active.title}
                 </h3>
-                <p className="mt-1 text-sm text-stone">
-                  Drag to compare before and after.
+                <p className="mt-0.5 text-[0.7rem] text-cream/55">
+                  Drag up &amp; down to compare
                 </p>
               </div>
               <button
                 type="button"
                 onClick={() => setActive(null)}
-                className="shrink-0 cursor-pointer px-3 py-2 text-[0.68rem] font-medium tracking-[0.16em] uppercase text-stone transition-colors hover:text-charcoal"
+                className="flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-full border border-cream/30 bg-cream/10 text-cream"
                 aria-label="Close before and after view"
               >
-                Close
+                <span className="text-lg leading-none" aria-hidden>
+                  ×
+                </span>
               </button>
             </div>
 
-            <div className="p-3 pb-[calc(1rem+env(safe-area-inset-bottom))] md:p-6 md:pb-6">
+            <div className="min-h-0 flex-1 px-3 pb-[max(1rem,env(safe-area-inset-bottom))] pt-1">
               <BeforeAfterSlider
+                orientation="vertical"
                 beforeSrc={active.beforeImage}
                 afterSrc={active.afterImage}
                 beforeAlt={`${active.title} — before`}
                 afterAlt={`${active.title} — after`}
+                className="h-full rounded-sm"
               />
             </div>
           </div>
-        </div>
+
+          {/* Desktop: horizontal left/right slider */}
+          <div
+            className="fixed inset-0 z-[70] hidden items-center justify-center bg-charcoal/70 p-8 backdrop-blur-sm md:flex"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby={`${titleId}-desktop`}
+            onClick={() => setActive(null)}
+          >
+            <div
+              className="relative w-full max-w-5xl overflow-hidden bg-cream shadow-[0_24px_80px_rgba(26,25,24,0.35)]"
+              onClick={(event) => event.stopPropagation()}
+            >
+              <div className="flex items-start justify-between gap-4 border-b border-border px-8 py-5">
+                <div className="min-w-0">
+                  <p className="text-[0.65rem] tracking-[0.18em] uppercase text-bronze">
+                    {active.categoryLabel}
+                  </p>
+                  <h3
+                    id={`${titleId}-desktop`}
+                    className="font-display mt-1 text-3xl text-charcoal"
+                  >
+                    {active.title}
+                  </h3>
+                  <p className="mt-1 text-sm text-stone">
+                    Drag to compare before and after.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setActive(null)}
+                  className="shrink-0 cursor-pointer px-3 py-2 text-[0.68rem] font-medium tracking-[0.16em] uppercase text-stone transition-colors hover:text-charcoal"
+                  aria-label="Close before and after view"
+                >
+                  Close
+                </button>
+              </div>
+
+              <div className="p-6">
+                <BeforeAfterSlider
+                  orientation="horizontal"
+                  beforeSrc={active.beforeImage}
+                  afterSrc={active.afterImage}
+                  beforeAlt={`${active.title} — before`}
+                  afterAlt={`${active.title} — after`}
+                />
+              </div>
+            </div>
+          </div>
+        </>
       ) : null}
     </div>
   );
