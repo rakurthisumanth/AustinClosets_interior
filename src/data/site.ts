@@ -21,9 +21,8 @@ export const siteConfig = {
     instagram: "https://www.instagram.com/austinclosets/",
   },
   stats: {
-    yearsExperience: 10,
+    yearsExperience: 5,
     projectsCompleted: 100,
-    happyClients: 50,
   } satisfies SiteStats,
   navigation: [
     { label: "Home", href: "/" },

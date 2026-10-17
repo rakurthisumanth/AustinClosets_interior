@@ -9,7 +9,7 @@ export function TrustBar() {
     <section className="border-y border-border bg-cream">
       <div className="container-wide">
         <Reveal>
-          <div className="grid grid-cols-3 divide-x divide-border">
+          <div className="grid grid-cols-1 divide-y divide-border sm:grid-cols-3 sm:divide-x sm:divide-y-0">
             <AnimatedStat
               value={stats.yearsExperience}
               label="Years Experience"
@@ -18,7 +18,7 @@ export function TrustBar() {
               value={stats.projectsCompleted}
               label="Projects Completed"
             />
-            <AnimatedStat value={stats.happyClients} label="Happy Clients" />
+            <AnimatedStat value={100} suffix="%" label="Custom Design" />
           </div>
         </Reveal>
       </div>

@@ -61,7 +61,10 @@ export function ContactForm() {
         body: JSON.stringify({ ...form, website: honeypot }),
       });
 
-      const data = (await response.json()) as { message?: string; errors?: ValidationErrors };
+      const data = (await response.json()) as {
+        message?: string;
+        errors?: ValidationErrors;
+      };
 
       if (!response.ok) {
         if (data.errors) setErrors(data.errors);
@@ -80,11 +83,7 @@ export function ContactForm() {
 
   if (success) {
     return (
-      <div
-        className="border border-border bg-ivory p-8 md:p-10"
-        role="status"
-        aria-live="polite"
-      >
+      <div role="status" aria-live="polite">
         <p className="text-[0.68rem] font-medium tracking-[0.2em] uppercase text-bronze">
           Request Received
         </p>
@@ -104,8 +103,7 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} noValidate className="relative space-y-6">
-      {/* Honeypot — hidden from users, catches bots */}
+    <form onSubmit={onSubmit} noValidate className="relative space-y-5 md:space-y-6">
       <div className="absolute -left-[9999px] h-0 w-0 overflow-hidden" aria-hidden="true">
         <label htmlFor="website">Website</label>
         <input
@@ -119,17 +117,19 @@ export function ContactForm() {
         />
       </div>
 
-      <div className="grid gap-6 sm:grid-cols-2">
-        <Field
-          label="First Name"
-          required
-          error={errors.firstName}
-          id="firstName"
-        >
+      <div className="border-b border-border pb-4">
+        <p className="text-[0.68rem] font-medium tracking-[0.2em] uppercase text-bronze">
+          Request a Consultation
+        </p>
+      </div>
+
+      <div className="grid gap-5 sm:grid-cols-2">
+        <Field label="First Name" required error={errors.firstName} id="firstName">
           <input
             id="firstName"
             name="firstName"
             autoComplete="given-name"
+            placeholder="First name"
             value={form.firstName}
             onChange={(e) => updateField("firstName", e.target.value)}
             className={fieldClass(!!errors.firstName)}
@@ -140,6 +140,7 @@ export function ContactForm() {
             id="lastName"
             name="lastName"
             autoComplete="family-name"
+            placeholder="Last name"
             value={form.lastName}
             onChange={(e) => updateField("lastName", e.target.value)}
             className={fieldClass(!!errors.lastName)}
@@ -147,13 +148,14 @@ export function ContactForm() {
         </Field>
       </div>
 
-      <div className="grid gap-6 sm:grid-cols-2">
+      <div className="grid gap-5 sm:grid-cols-2">
         <Field label="Email" required error={errors.email} id="email">
           <input
             id="email"
             name="email"
             type="email"
             autoComplete="email"
+            placeholder="you@email.com"
             value={form.email}
             onChange={(e) => updateField("email", e.target.value)}
             className={fieldClass(!!errors.email)}
@@ -165,6 +167,7 @@ export function ContactForm() {
             name="phone"
             type="tel"
             autoComplete="tel"
+            placeholder="(737) 000-0000"
             value={form.phone}
             onChange={(e) => updateField("phone", e.target.value)}
             className={fieldClass(!!errors.phone)}
@@ -172,7 +175,7 @@ export function ContactForm() {
         </Field>
       </div>
 
-      <div className="grid gap-6 sm:grid-cols-2">
+      <div className="grid gap-5 sm:grid-cols-2">
         <Field
           label="Project Type"
           required
@@ -219,7 +222,7 @@ export function ContactForm() {
           rows={5}
           value={form.message}
           onChange={(e) => updateField("message", e.target.value)}
-          className={cn(fieldClass(false), "resize-y min-h-[8rem]")}
+          className={cn(fieldClass(false), "min-h-[8rem] resize-y")}
           placeholder="Tell us about your space and goals."
         />
       </Field>
@@ -230,8 +233,9 @@ export function ContactForm() {
         </p>
       ) : null}
 
-      <Button type="submit" disabled={submitting} className="w-full sm:w-auto">
+      <Button type="submit" disabled={submitting} className="w-full !py-4">
         {submitting ? "Sending..." : "Request a Consultation"}
+        {!submitting ? <span aria-hidden>→</span> : null}
       </Button>
     </form>
   );
@@ -239,9 +243,11 @@ export function ContactForm() {
 
 function fieldClass(hasError: boolean) {
   return cn(
-    "w-full border bg-cream px-4 py-3.5 text-sm text-charcoal outline-none transition-colors",
-    "placeholder:text-stone/50 focus:border-bronze",
-    hasError ? "border-red-600" : "border-border-strong",
+    "w-full border bg-[#f6f3ef] px-4 py-3.5 text-sm text-charcoal transition-colors",
+    "placeholder:text-stone/45",
+    "!outline-none focus:!outline-none focus-visible:!outline-none focus:!ring-0",
+    "focus:border-bronze focus:bg-white",
+    hasError ? "border-red-600" : "border-transparent",
   );
 }
 
@@ -262,7 +268,7 @@ function Field({
     <div>
       <label
         htmlFor={id}
-        className="mb-2 block text-[0.68rem] font-medium tracking-[0.16em] uppercase text-stone"
+        className="mb-2 block text-[0.65rem] font-medium tracking-[0.14em] uppercase text-stone"
       >
         {label}
         {required ? <span className="text-bronze"> *</span> : null}

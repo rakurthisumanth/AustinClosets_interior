@@ -49,7 +49,6 @@ export interface Testimonial {
 export interface SiteStats {
   yearsExperience: number;
   projectsCompleted: number;
-  happyClients: number;
 }
 
 export interface ContactFormData {

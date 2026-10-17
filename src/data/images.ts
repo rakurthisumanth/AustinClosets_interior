@@ -5,8 +5,8 @@
 export const images = {
   hero: {
     home: {
-      src: "/images/hero-home.jpg",
-      alt: "Sunlit living room with tailored furnishings and warm wood accents",
+      src: "/images/hero-home-v5.jpg",
+      alt: "Golden-hour luxury living room overlooking the water",
     },
     about: {
       src: "/images/hero-about.jpg",
@@ -21,22 +21,22 @@ export const images = {
       alt: "Modern luxury interior with sculptural seating and stone surfaces",
     },
     contact: {
-      src: "/images/hero-contact.jpg",
-      alt: "Architectural home exterior with warm evening light",
+      src: "/images/hero-contact-v2.jpg",
+      alt: "Modern glass home at dusk with lit patio and warm interior",
     },
   },
   intro: {
-    src: "/images/intro-closet.jpg",
-    alt: "Custom walk-in closet with soft lighting and organized shelving",
+    src: "/images/intro-closet-v2.jpg",
+    alt: "Warm living room with stone media wall, wood beams, and custom built-ins",
   },
   beforeAfter: {
     before: {
-      src: "/images/before.jpg",
-      alt: "Room before renovation with unused layout",
+      src: "/images/before-v2.jpg",
+      alt: "Empty dated living room before renovation",
     },
     after: {
-      src: "/images/after.jpg",
-      alt: "Room after custom interior design with refined finishes",
+      src: "/images/after-v2.jpg",
+      alt: "Finished living room with arched shelves, wood beams, and custom furnishings",
     },
   },
   about: {
@@ -54,7 +54,11 @@ export const images = {
     },
   },
   cta: {
-    src: "/images/cta.jpg",
-    alt: "Inviting home foyer with natural materials and soft light",
+    src: "/images/cta-home-v4.jpg",
+    alt: "Modern glass home at dusk with lit patio and warm interior",
+  },
+  contactBackground: {
+    src: "/images/contact-bg-v1.jpg",
+    alt: "Modern glass home at dusk with lit patio and warm interior",
   },
 } as const;

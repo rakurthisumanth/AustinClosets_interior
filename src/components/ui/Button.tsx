@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
-type ButtonVariant = "primary" | "secondary" | "ghost" | "light";
+type ButtonVariant = "primary" | "secondary" | "ghost" | "light" | "sand";
 
 interface ButtonBaseProps {
   variant?: ButtonVariant;
@@ -24,6 +24,7 @@ const variantClass: Record<ButtonVariant, string> = {
   secondary: "btn-secondary",
   ghost: "btn-ghost",
   light: "btn-light",
+  sand: "btn-sand",
 };
 
 const base =
