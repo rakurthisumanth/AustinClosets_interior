@@ -6,7 +6,7 @@ export const siteConfig = {
   tagline: "Spaces Designed Around You.",
   description:
     "AustinClosets designs Closets Main, custom cabinets, bedrooms, living spaces, and home offices for residences across the United States.",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://austinclosets.com",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.austinclosetstx.com",
   contact: {
     phone: "+1 7373913259",
     phoneHref: "tel:+17373913259",

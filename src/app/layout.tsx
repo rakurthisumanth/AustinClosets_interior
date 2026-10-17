@@ -29,9 +29,12 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   icons: {
-    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/icon-512.png", type: "image/png", sizes: "512x512" },
+    ],
     shortcut: "/favicon.svg",
-    apple: "/favicon.svg",
+    apple: [{ url: "/apple-touch-icon.png", sizes: "512x512", type: "image/png" }],
   },
   openGraph: {
     type: "website",
@@ -40,11 +43,20 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: "AustinClosets Custom Interiors",
     description: siteConfig.description,
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "AustinClosets — Closets, Kitchens, Cabinets",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "AustinClosets Custom Interiors",
     description: siteConfig.description,
+    images: ["/og-image.jpg"],
   },
   robots: {
     index: true,
