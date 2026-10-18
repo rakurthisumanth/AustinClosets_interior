@@ -58,12 +58,12 @@ export function AnimatedStat({ value, suffix = "+", label }: AnimatedStatProps) 
   }, [started, value]);
 
   return (
-    <div ref={ref} className="px-3 py-8 text-center sm:px-6 sm:py-11">
-      <p className="font-display text-[2.5rem] leading-none tracking-[-0.02em] text-charcoal sm:text-5xl md:text-6xl">
+    <div ref={ref} className="px-1.5 py-6 text-center sm:px-6 sm:py-11">
+      <p className="font-display-nums text-[1.85rem] leading-none tracking-[-0.02em] text-charcoal sm:text-5xl md:text-6xl">
         {display}
         <span className="text-bronze">{suffix}</span>
       </p>
-      <p className="mt-3 text-[0.58rem] font-medium tracking-[0.14em] uppercase text-stone sm:mt-3.5 sm:text-[0.68rem] sm:tracking-[0.18em]">
+      <p className="mt-2.5 text-[0.5rem] font-medium tracking-[0.1em] uppercase text-stone sm:mt-3.5 sm:text-[0.68rem] sm:tracking-[0.18em]">
         {label}
       </p>
     </div>

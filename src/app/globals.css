@@ -126,6 +126,13 @@ img {
   font-family: var(--font-display), Georgia, serif;
 }
 
+/* Keep serif display font, but force equal-height digits (fixes small "2" in 279) */
+.font-display-nums {
+  font-family: var(--font-display), Georgia, serif;
+  font-variant-numeric: lining-nums tabular-nums;
+  font-feature-settings: "lnum" 1, "tnum" 1;
+}
+
 .font-body {
   font-family: var(--font-body), system-ui, sans-serif;
 }

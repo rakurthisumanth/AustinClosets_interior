@@ -22,7 +22,7 @@ export const siteConfig = {
   },
   stats: {
     yearsExperience: 5,
-    projectsCompleted: 100,
+    projectsCompleted: 279,
   } satisfies SiteStats,
   navigation: [
     { label: "Home", href: "/" },

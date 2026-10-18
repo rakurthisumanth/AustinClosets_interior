@@ -12,6 +12,8 @@ const display = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
   display: "swap",
+  // Prefer lining figures so digits like 2 / 7 / 9 share the same height
+  adjustFontFallback: true,
 });
 
 const body = Outfit({
