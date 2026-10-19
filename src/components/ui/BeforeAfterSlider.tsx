@@ -108,7 +108,10 @@ export function BeforeAfterSlider({
         alt={afterAlt}
         fill
         sizes="100vw"
-        className="object-cover object-center"
+        className={cn(
+          "object-cover",
+          isVertical ? "object-[center_55%]" : "object-center",
+        )}
         draggable={false}
         priority
       />
@@ -127,7 +130,10 @@ export function BeforeAfterSlider({
           alt={beforeAlt}
           fill
           sizes="100vw"
-          className="object-cover object-center"
+          className={cn(
+            "object-cover",
+            isVertical ? "object-[center_60%]" : "object-center",
+          )}
           draggable={false}
           priority
         />
